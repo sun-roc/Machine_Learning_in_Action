@@ -13,7 +13,7 @@ papers_Unknown = []
 # 把未知文章的篇数号加到列表中
 papers_Unknown_index = []
 #遍历85篇paper查找能用的上的三种分类
-for i in range(85):
+for i in range(86):
     paper = split_paper_list[i]
     if "HAMILTON OR MADISON" in paper:
         papers_Unknown.append(paper)
@@ -25,7 +25,7 @@ for i in range(85):
     elif "MADISON" in paper:
         papers_Madi.append(paper)
 
-#统计每篇文章的出现次数超过10词的高频词,组成一个词向量
+#统计所有文章的出现次数超过10词的高频词,组成一个词向量
 Vectorizer = CountVectorizer(min_df=10)
 #把他们合成一个列表
 papers_list = papers_Hami + papers_Madi + papers_Unknown
